@@ -10,8 +10,29 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
-app.get('/api/timestamp/:date_string', (req, res) => {
-  res.send(req.params.date_string);
+app.get('/api/timestamp/:date_string?', (req, res) => {
+  function formatDate(date) {
+    return {
+      unix: date.getTime(),
+      utc: date.toUTCString()
+    };
+  }
+
+  const dateString = req.params.date_string;
+
+  if (!dateString) {
+    return res.json(formatDate(new Date()));
+  }
+
+  const date = /^\d*$/.test(dateString)
+    ? new Date(Number(dateString) * 1000)
+    : new Date(dateString);
+
+  if (isNaN(date.getTime())) {
+    return res.json({ error: 'Invalid Date' });
+  }
+
+  res.json(formatDate(date));
 });
 
 app.listen(port, () => {
