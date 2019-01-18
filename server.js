@@ -35,6 +35,16 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
   res.json(formatDate(date));
 });
 
+app.use((req, res) => {
+  res.status(404);
+  res.send({ error: 'Not found' });
+});
+
+app.use((err, res, req, next) => {
+  res.status(500);
+  res.send({ error: err.message });
+});
+
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });
