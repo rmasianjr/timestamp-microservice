@@ -29,7 +29,7 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
     : new Date(dateString);
 
   if (isNaN(date.getTime())) {
-    return res.json({ error: 'Invalid Date' });
+    return res.json({ unix: null, utc: 'Invalid Date' });
   }
 
   res.json(formatDate(date));
