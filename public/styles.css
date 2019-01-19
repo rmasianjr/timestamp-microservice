@@ -35,6 +35,7 @@ h3 {
   border-bottom: 2px solid #7ed56f;
   display: inline-block;
   padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 li {
@@ -45,9 +46,10 @@ li {
 code {
   background: #f2f5f5;
   font-size: 1.8rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.8rem;
   border-radius: 3px;
   display: inline-block;
+  word-break: break-all;
 }
 
 ul {
@@ -58,7 +60,6 @@ a {
   color: #1da1f2;
   text-decoration: none;
   display: inline-block;
-  margin: 0.3rem;
   border-bottom: 1px solid transparent;
 }
 
@@ -86,9 +87,5 @@ a:hover {
   ul,
   ol {
     padding-left: 1rem;
-  }
-
-  .api-link {
-    margin-left: -1.5rem;
   }
 }
