@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <title>Timestamp Microservice</title>
   </head>
@@ -14,7 +15,7 @@
       <ol class="user-stories">
         <li>
           The API endpoint is
-          <code>GET [project_url]/api/timestamp/:date_string?</code>
+          <code class="api-link">GET [project_url]/api/timestamp/:date_string?</code>
         </li>
         <li>
           A date string is valid if can be successfully parsed by
@@ -52,19 +53,19 @@
 
       <h3>Example Usage:</h3>
       <ul>
-        <li><code>GET [project url]/api/timestamp/2015-12-25</code></li>
-        <li><code>GET project url]/api/timestamp/1450137600</code></li>
+        <li><a href="/api/timestamp/2015-12-25">[project url]/api/timestamp/2015-12-25</a></li>
+        <li><a href="/api/timestamp/1450137600">[project url]/api/timestamp/1450137600</a></li>
       </ul>
 
-      <h3>Example Output</h3>
-      <p>
-        <code
-          >{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code
-        >
+      <h3>Example Output:</h3>
+      <p class="output">
+        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
       </p>
     </div>
     <div class="footer">
-      <p>by <a href="https://twitter.com/rmasianjr">Ricardo Masian Jr.</a></p>
+      <p>By:<a href="https://twitter.com/rmasianjr">Ricardo Masian Jr.</a> | 
+        <a href="https://github.com/rmasianjr/timestamp-microservice">View code</a>
+      </p>
     </div>
   </body>
 </html>
